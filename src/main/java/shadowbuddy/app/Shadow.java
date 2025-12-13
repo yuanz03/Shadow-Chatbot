@@ -5,7 +5,6 @@ import java.io.IOException;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.util.Duration;
-import shadowbuddy.services.ShadowException;
 import shadowbuddy.storage.ShadowStorage;
 
 /**
@@ -64,8 +63,6 @@ public class Shadow {
         String trimmedInput = userInput.trim();
         String[] inputDetails = trimmedInput.split(" ");
 
-        // Solution below adapted from a ChatGPT example on how to delay exiting from a JavaFx application
-        // Initial thread-based approach was replaced to ensure thread safety as per code quality standards
         if (inputDetails[0].equalsIgnoreCase(EXIT_COMMAND)) {
             commandType = EXIT_COMMAND; // reset to default dialog styling when exit command is passed
             PauseTransition exitDelay = new PauseTransition(Duration.millis(GOODBYE_DELAY));
@@ -80,7 +77,7 @@ public class Shadow {
             String chatbotOutput = chatbotController.executeCommand(userCommand, chatbotUi);
             chatbotController.writeToDatabase();
             return chatbotOutput;
-        } catch (ShadowException | IOException exception) {
+        } catch (Exception exception) {
             commandType = ERROR_COMMAND; // set to error dialog styling when exceptions are thrown
             return exception.getMessage();
         }

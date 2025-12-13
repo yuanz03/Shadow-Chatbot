@@ -58,9 +58,9 @@ public class ShadowController {
      *
      * @param input The raw user input String to parse.
      * @return The ShadowCommand instance parsed by delegating to ShadowParser.
-     * @throws ShadowException If the user input is syntactically invalid.
+     * @throws Exception If the user input is syntactically invalid.
      */
-    public ShadowCommand handleInput(String input) throws ShadowException {
+    public ShadowCommand handleInput(String input) throws Exception {
         assert input != null : "user input should not be null";
         return ShadowParser.parse(input);
     }
@@ -79,7 +79,7 @@ public class ShadowController {
         assert userCommand != null : "userCommand should not be null";
         assert ui != null : "ui should not be null";
         String taskDescription = userCommand.taskDescription.trim();
-        // Solution below inspired from a ChatGPT example on how to use a switch structure to toggle between commands
+
         switch (userCommand.commandType) {
         case LIST:
             return ui.showTaskList(this.taskList);

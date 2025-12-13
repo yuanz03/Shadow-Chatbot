@@ -60,7 +60,6 @@ public class DialogBox extends HBox {
      * @param commandType The command type String used to determine the styling to apply.
      */
     private void changeDialogStyle(String commandType) {
-        // Solution below inspired from a ChatGPT example on how to use multiple labels in a single switch case
         switch (commandType) {
         case "TODO", "DEADLINE", "EVENT":
             dialog.getStyleClass().add("add-label");

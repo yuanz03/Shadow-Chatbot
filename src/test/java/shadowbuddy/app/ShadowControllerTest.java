@@ -24,7 +24,6 @@ public class ShadowControllerTest {
             "project meeting", "Jul 4 2025 16:00", "Jul 5 2025 20:00");
     private static final ShadowCommand UNKNOWN_COMMAND = new ShadowCommand(ShadowCommand.CommandType.UNKNOWN);
 
-    // Solution below adapted from a ChatGPT example on how to use @TempDir to create a temporary file for testing
     @Test
     public void execute_todoTaskCreation(@TempDir Path tempDir) throws ShadowException {
         Path tempFile = tempDir.resolve("dummy.txt");
