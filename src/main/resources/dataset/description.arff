@@ -1,0 +1,105 @@
+@RELATION description
+
+@ATTRIBUTE text STRING
+@ATTRIBUTE class {description, command, other}
+
+@DATA
+"go", description
+"CS", description
+"set", description
+"buy", description
+"add", description
+"new", description
+"mom", description
+"dad", description
+"car", description
+"cat", description
+"pay", description
+"gym", description
+"call", description
+"milk", description
+"make", description
+"wash", description
+"help", description
+"room", description
+"bill", description
+"pack", description
+"feet", description
+"fees", description
+"rent", description
+"team", description
+"with", description
+"note", description
+"book", description
+"plan", description
+"taxes", description
+"clean", description
+"forms", description
+"phone", description
+"draft", description
+"movie", description
+"night", description
+"create", description
+"report", description
+"finish", description
+"submit", description
+"dinner", description
+"slides", description
+"school", description
+"thesis", description
+"office", description
+"family", description
+"doctor", description
+"outing", description
+"coding", description
+"filing", description
+"IS1128", description
+"CS2103T", description
+"lecture", description
+"project", description
+"laundry", description
+"grocery", description
+"prepare", description
+"meeting", description
+"session", description
+"friends", description
+"workshop", description
+"shopping", description
+"homework", description
+"suitcase", description
+"schedule", description
+"utilities", description
+"assignment", description
+"submission", description
+"internship", description
+"appointment", description
+"presentation", description
+"todo", command
+"deadline", command
+"event", command
+"a", other
+"I", other
+"on", other
+"to", other
+"my", other
+"me", other
+"an", other
+"up", other
+"the", other
+"for", other
+"due", other
+"want", other
+"need", other
+"from", other
+"down", other
+"please", other
+"10/12/2025 1530", other
+"01/02/2026 1200", other
+"12/12/2025 1800", other
+"05/01/2026 0900", other
+"10/01/2026 2359", other
+"03/01/2026 1200", other
+"14/01/2026 1700", other
+"08/01/2026 0800", other
+"15/01/2026 2000", other
+"15/01/2026 2100", other

@@ -1,0 +1,104 @@
+@RELATION intents
+
+@ATTRIBUTE text STRING
+@ATTRIBUTE class {query, mark, unmark, delete, todo, deadline, event, unknown}
+
+@DATA
+"what tasks do I have", query
+"show my tasks", query
+"list all my tasks", query
+"what do I need to do today", query
+"what tasks are pending", query
+"show me my todo list", query
+"can you list my todos", query
+"what do I still have to finish", query
+"are there any tasks left", query
+"do I have anything to do", query
+"give me my list of tasks", query
+"show everything I need to complete", query
+"any deadlines or tasks due", query
+"what's on my list", query
+"display my tasks", query
+"what am I supposed to finish", query
+"tell me my upcoming tasks", query
+"anything else I need to get done", query
+"complete task 1", mark
+"check off my 2nd task", mark
+"mark task 3 as done", mark
+"mark task 4 done", mark
+"finish task 5", mark
+"I completed task 1", mark
+"task 2 is done mark it", mark
+"mark task 3 as completed", mark
+"tick off task number 4", mark
+"check task 5 as done", mark
+"set task 1 to completed", mark
+"mark my 2nd task done", mark
+"done with task 3 please mark it", mark
+"I've finished task 4 mark it", mark
+"complete task number 5", mark
+"reopen task 1", unmark
+"undo completion of my 2nd task", unmark
+"set task 3 as not done", unmark
+"mark task 4 as not done", unmark
+"undo task 5 completion", unmark
+"set task 1 back to incomplete", unmark
+"uncheck my 2nd task", unmark
+"task 3 is not done undo it", unmark
+"I want to reopen task 4", unmark
+"reverse completion of task 5", unmark
+"remove checkmark from task 1", unmark
+"task 2 isn't finished undo it", unmark
+"undo marking for task number 3", unmark
+"unmark task 4", unmark
+"set task 5 as incomplete", unmark
+"delete task 1", delete
+"remove task 2", delete
+"discard my 3rd task", delete
+"remove task number 4", delete
+"please delete my 5th task", delete
+"get rid of task 1", delete
+"discard task 2 for me", delete
+"trash the 3rd task", delete
+"erase my 4th task", delete
+"delete the task number 5", delete
+"drop task 1", delete
+"remove task number 2 from the list", delete
+"delete my 3rd task", delete
+"remove 4 from list", delete
+"delete 5 from list", delete
+"add todo buy fruits", todo
+"create a new todo to finish my report", todo
+"add a todo to buy milk", todo
+"make a new todo to call mom", todo
+"add todo wash the car", todo
+"create a new todo to clean my room", todo
+"add todo to wash my laundry", todo
+"make a new todo to go grocery shopping", todo
+"help me add a todo to submit forms", todo
+"add a todo to finish my homework", todo
+"add a todo to pay the phone bill", todo
+"add a todo to buy dinner", todo
+"please create a todo to pack my suitcase", todo
+"I want to add a todo to feed the cat", todo
+"add a new todo to prepare presentation slides", todo
+"please add deadline for assignment submission to 10/12/2025 1530", deadline
+"help create deadline for school fees to 01/02/2026 1200", deadline
+"set a deadline for project report to 12/12/2025 1800", deadline
+"add deadline for homework due 05/01/2026 0900", deadline
+"create a deadline for filing taxes 10/01/2026 2359", deadline
+"please set deadline for paying rent 03/01/2026 1200", deadline
+"help me add a deadline for internship report 14/01/2026 1700", deadline
+"I need a deadline for thesis draft 08/01/2026 0800", deadline
+"add deadline for CS2103T project on 15/01/2026 2000", deadline
+"create a new deadline to pay utilities 21/12/2025 1000", deadline
+"create new event for CS lecture from 11/12/2025 1200 to 11/12/2025 1400", event
+"add event for IS1128 presentation 04/07/2025 1200 to 04/07/2025 1600", event
+"create an event meeting with team from 10/12/2025 1400 to 10/12/2025 1500", event
+"add an event dinner with family 18/01/2026 1900 to 18/01/2026 2100", event
+"note down a new event of doctor appointment 05/01/2026 0900 to 05/01/2026 1100", event
+"schedule new event gym session 07/01/2026 0700 to 07/01/2026 0800", event
+"book an event outing with friends from 22/01/2026 1300 to 22/01/2026 1700", event
+"I want to add an event coding workshop 11/01/2026 1000 to 11/01/2026 1600", event
+"set up an event office meeting 14/01/2026 1500 to 14/01/2026 1700", event
+"plan event movie night 30/01/2026 1900 to 30/01/2026 2300", event

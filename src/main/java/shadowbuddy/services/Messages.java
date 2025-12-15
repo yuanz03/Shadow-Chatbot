@@ -18,13 +18,9 @@ public class Messages {
     public static final String MESSAGE_INVALID_TASK_INDEX = "Please provide a numeric index for your request!";
     public static final String MESSAGE_INVALID_TASK_INDEX_BOUNDS = "Please enter a number between 1 and %s.";
 
-    public static final String MESSAGE_EMPTY_TASK_DATE = "Missing task date! Please use: ";
     public static final String MESSAGE_INVALID_DEADLINE_DATE = "Invalid due date! Please use: ";
     public static final String MESSAGE_INVALID_EVENT_DATE = "Invalid start or end date! Please use: ";
     public static final String MESSAGE_INVALID_DATE_RANGE = "Start date must be before end date!";
-
-    public static final String MESSAGE_INVALID_MARKER_FORMAT = "Invalid format! Please use: %s";
-    public static final String MESSAGE_DUPLICATE_MARKERS = "Duplicate '%s' found! Please use: ";
 
     public static final String MESSAGE_NO_KEYWORD = "Please provide a keyword for your find.";
     public static final String MESSAGE_MULTIPLE_KEYWORDS = "Please provide only ONE keyword for your find.";
