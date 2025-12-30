@@ -1,5 +1,6 @@
 package shadowbuddy.ml;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import weka.classifiers.Classifier;
@@ -17,8 +18,8 @@ import weka.filters.unsupervised.attribute.StringToWordVector;
  * apply the configured preprocessing filter, and obtain the predicted class label.
  */
 public class IntentClassifier {
-    private static final String MODEL_FILE_PATH = "src/main/resources/models/shadow.model";
-    private static final String FILTER_FILE_PATH = "src/main/resources/models/filter.model";
+    private static final String MODEL_FILE_PATH = "models/shadow.model";
+    private static final String FILTER_FILE_PATH = "models/filter.model";
 
     /* Static initialiser ensures the model and filter are available once the class is first referenced */
     private static final Object[] MODEL_AND_FILTER = loadModelAndFilter();
@@ -64,8 +65,12 @@ public class IntentClassifier {
      */
     private static Object[] loadModelAndFilter() {
         try {
-            Classifier model = (Classifier) SerializationHelper.read(MODEL_FILE_PATH);
-            StringToWordVector filter = (StringToWordVector) SerializationHelper.read(FILTER_FILE_PATH);
+            InputStream modelStream = DescriptionExtractor.class.getClassLoader().getResourceAsStream(MODEL_FILE_PATH);
+            InputStream filterStream =
+                    DescriptionExtractor.class.getClassLoader().getResourceAsStream(FILTER_FILE_PATH);
+
+            Classifier model = (Classifier) SerializationHelper.read(modelStream);
+            StringToWordVector filter = (StringToWordVector) SerializationHelper.read(filterStream);
             return new Object[] { model, filter };
         } catch (Exception e) {
             throw new RuntimeException(e);

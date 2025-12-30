@@ -1,5 +1,6 @@
 package shadowbuddy.ml;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import weka.classifiers.Classifier;
@@ -16,8 +17,8 @@ import weka.filters.unsupervised.attribute.StringToWordVector;
  * and returns only those labelled as {@code "description"} that appear after a {@code "command"} word.
  */
 public class DescriptionExtractor {
-    private static final String MODEL_FILE_PATH = "src/main/resources/models/description.model";
-    private static final String FILTER_FILE_PATH = "src/main/resources/models/description-filter.model";
+    private static final String MODEL_FILE_PATH = "models/description.model";
+    private static final String FILTER_FILE_PATH = "models/description-filter.model";
 
     private static final Object[] MODEL_AND_FILTER = loadModelAndFilter();
     private static final Classifier MODEL = (Classifier) MODEL_AND_FILTER[0];
@@ -65,8 +66,12 @@ public class DescriptionExtractor {
 
     private static Object[] loadModelAndFilter() {
         try {
-            Classifier model = (Classifier) SerializationHelper.read(MODEL_FILE_PATH);
-            StringToWordVector filter = (StringToWordVector) SerializationHelper.read(FILTER_FILE_PATH);
+            InputStream modelStream = DescriptionExtractor.class.getClassLoader().getResourceAsStream(MODEL_FILE_PATH);
+            InputStream filterStream =
+                    DescriptionExtractor.class.getClassLoader().getResourceAsStream(FILTER_FILE_PATH);
+
+            Classifier model = (Classifier) SerializationHelper.read(modelStream);
+            StringToWordVector filter = (StringToWordVector) SerializationHelper.read(filterStream);
             return new Object[] { model, filter };
         } catch (Exception e) {
             throw new RuntimeException(e);
